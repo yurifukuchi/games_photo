@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_28_125749) do
+ActiveRecord::Schema.define(version: 2019_08_30_073805) do
 
   create_table "follows", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "follower_id"
@@ -31,36 +31,38 @@ ActiveRecord::Schema.define(version: 2019_08_28_125749) do
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
-  create_table "post_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "image", null: false
-    t.bigint "user_id"
-    t.bigint "post_id"
+  create_table "post_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["post_id"], name: "index_post_images_on_post_id"
-    t.index ["user_id"], name: "index_post_images_on_user_id"
   end
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "text", null: false
+    t.string "image"
     t.bigint "user_id"
+    t.bigint "post_category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["post_category_id"], name: "index_posts_on_post_category_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
-    t.text "description", null: false
-    t.string "email", null: false
-    t.string "password", null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
-  add_foreign_key "post_images", "posts"
-  add_foreign_key "post_images", "users"
+  add_foreign_key "posts", "post_categories"
   add_foreign_key "posts", "users"
 end
