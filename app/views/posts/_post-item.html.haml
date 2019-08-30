@@ -1,0 +1,15 @@
+.main__inner
+  最近の投稿
+
+  .main__inner__wrapper
+    .main-inner__wrapper__post-category
+      
+    .main-inner__wrapper__contents
+      - @posts.each do |post|
+        = image_tag post.image.url
+        .main-inner__wrapper__content__text
+          = post.text
+        .main-inner__wrapper__content__image
+          
+        
+

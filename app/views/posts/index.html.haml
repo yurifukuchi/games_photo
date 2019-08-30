@@ -1,0 +1,14 @@
+.wrapper
+  = render 'shared/header'
+
+  - if user_signed_in?
+    = link_to new_post_path, class: "float-sell-btn" do
+      .sell 投稿
+      %i.fa.fa-camera
+  - else
+    = link_to new_user_registration_path, class: "float-sell-btn" do
+      .sell 投稿
+      %i.fa.fa-camera
+
+  %main.main
+    = render 'posts/post-item'
