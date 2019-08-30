@@ -1,7 +1,100 @@
 .main__inner{
-  margin: 20px 250px;
+  margin: 0 250px;
   font-size: 18px;
   font-weight: 500;
-  border-bottom: 1px,solid,red;
+
+  &__title{
+    display: inline-block;
+    border-bottom: 1px solid #dcdcdc;
+    width:100%;
+    padding:30px 0;
+  }
   
+  &__contents{
+    padding:20px 0;
+    display: block;
+    border-bottom: 1px solid #dcdcdc;
+
+    &__category{
+      width: 100%;
+
+      &__box{
+        display: inline-block;
+        padding: 3px 20px;
+        border-radius: 20px;
+        font-size:13px;
+        color: #FFFFFFFF;
+      }
+    }
+
+    &__date{
+      float:right;
+      color: #696969;
+      font-size: 13px;
+    }
+
+
+
+    &__post{
+      color: #696969;
+      font-size: 13px;
+      display: flex;
+      
+      margin-top:10px;
+
+
+      &__info{
+
+        &__text{
+          display: block;
+          height:100px;
+          width:760px;
+          padding-right:60px;
+        }
+
+        &__user{
+          display: flex;
+
+          width: 100%;
+          height:30px;
+          
+  
+          &__name{
+            display: block;
+            padding-right:14px;
+            line-height: 30px;
+          }
+
+          .link-btn:hover{
+            color:blue;
+          }
+  
+        }
+
+
+      }
+  
+      &__image{
+        margin-right: auto;
+        
+
+        .post-image{
+          display: inline-block;
+          height: 140px;
+          width: 140px;
+          object-fit: cover;
+
+
+        }
+      }
+
+
+    }
+      
+
+    
+  }
+
+
+
 }

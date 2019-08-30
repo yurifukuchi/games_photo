@@ -14,5 +14,7 @@
  *= require_self
  */
  @import "reset";
+ @import "mixin/global";
  @import "modules/header";
  @import "modules/new";
+ 
