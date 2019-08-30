@@ -3,7 +3,9 @@
   %header.header
     .header__inner
       .header__inner__title-logo
-        = image_tag 'logo.png', alt: 'タイトルロゴ', class: 'header__inner__title-logo__image'
+        = link_to root_path do
+          = image_tag 'logo.png', alt: 'タイトルロゴ', class: 'header__inner__title-logo__image'
+        
       %p.header__inner__about-app
         GamePhotoは、ゲームのハイライトを画像と一緒に投稿できるサイトです。
       .header__inner__login-menu
@@ -21,12 +23,13 @@
     .header__user
       -if user_signed_in?
         %p.header__user__name
-          = "#{current_user.name}さん"
+          =link_to user_path(current_user.id) do
+            = "ようこそ #{current_user.name}さん"
         %p.header__user__follow フォロー
         %p 17人
         %p.header__user__follower フォロワー
         %p 15人
 
-        
+
 
   

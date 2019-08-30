@@ -1,15 +1,45 @@
-.main__inner
-  最近の投稿
 
-  .main__inner__wrapper
-    .main-inner__wrapper__post-category
-      
-    .main-inner__wrapper__contents
-      - @posts.each do |post|
-        = image_tag post.image.url
-        .main-inner__wrapper__content__text
-          = post.text
-        .main-inner__wrapper__content__image
-          
+- @posts.each do |post|
+  .main__inner__contents
+    .main__inner__contents__category
+    - if post.post_category.present?
+      - if post.post_category.id == 1
+        .main__inner__contents__category__box.category1
+          = post.post_category.name
+
+      - if post.post_category.id == 2
+        .main__inner__contents__category__box.category2
+          = post.post_category.name
+
+      - if post.post_category.id == 3
+        .main__inner__contents__category__box.category3
+          = post.post_category.name
+
+      - if post.post_category.id == 4
+        .main__inner__contents__category__box.category4
+          = post.post_category.name
+
+    .main__inner__contents__date
+      = @day
         
+    .main__inner__contents__post
+      
+      .main__inner__contents__post__info
+        .main__inner__contents__post__info__text
+          = post.text.truncate(200)
+        .main__inner__contents__post__info__user
+          .main__inner__contents__post__info__user__name
+            = link_to user_path(post.user_id), class: 'link-btn' do
+              = post.user.name
+          -if post.user_id == current_user.id
+            = link_to '編集する', edit_post_path(post.id)
+            = link_to '削除する', root_path
+
+              
+      
+
+      .main__inner__contents__post__image
+        = image_tag post.image.url, class: 'post-image'
+          
+
 
