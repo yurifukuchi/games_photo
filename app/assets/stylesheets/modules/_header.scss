@@ -1,0 +1,135 @@
+.header{
+  border-bottom: 1px solid #dcdcdc;
+
+  &__inner{
+    margin: 0 250px ;
+    height: 65px;
+    padding-top:15px;
+
+    &__title-logo{
+      display: inline-block;
+      line-height: 65px;
+      float: left;
+
+
+      &__image{
+        height:40px;
+        vertical-align: middle;
+      }
+    }
+
+    &__about-app{
+      box-sizing: border-box;
+      float: left;
+      display: inline;
+      font-size: 12px;
+      margin-left: 30px;
+      color: #696969;
+      line-height: 65px;
+    }
+
+    &__login-menu{
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center;
+      flex-direction:row;
+      float: right;
+      font-size: 13px;
+
+      &__login{
+        display: inline-block;
+        color: #696969;
+        line-height: 65px;
+      }
+
+      &__sign-up{
+        box-sizing: border-box;
+        border-radius: 6px;
+        margin-left: 25px;
+        background-color: #1e90ff;
+        color: #ffffff;
+        padding: 8px 16px;
+      }
+
+      &__sign-up:hover{
+        opacity: 0.9;
+      }
+    }
+  }
+
+ 
+  &__search-form{
+    display: inline-block;
+    margin: 2px 0 0 250px;
+    position: relative;
+    height: 60px;
+
+    &__box{
+      display: block;
+      margin: 0 auto;
+      width: 400px;
+      padding: 10px 40px 10px 20px;
+      border: 1px solid #dcdcdc;
+      border-radius: 20px;
+      font-size:15px;
+    }
+
+    .search-btn{
+      border-style: none;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .search-icon{
+      position: absolute;
+      top:10px;
+      right:15px;
+      font-size: 15px;
+    }
+
+    &__box:focus{
+      outline: 0;
+      border: 1px solid #1D90FF;
+    }
+    
+
+
+
+    &__btn{
+      display: block;
+      border-style: none;
+      position: absolute;
+      top: 0px;
+      right:180px;
+      width: 40px;
+      height:40px;
+      float:right;
+      background-color:red;
+    }
+  }
+
+  &__user{
+    float:right;
+    display: flex;
+    margin-right:250px;
+    font-size: 13px;
+    line-height: 65px;
+    color:#696969;
+    
+    &__name{
+
+    }
+
+    &__follow{
+      margin:0px 30px 0px 50px;
+
+    }
+
+    &__follower{
+      margin:0 30px 0 15px;
+    }
+  }
+
+
+
+}

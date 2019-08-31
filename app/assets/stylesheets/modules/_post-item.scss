@@ -1,0 +1,159 @@
+.main__inner{
+  margin: 0 250px;
+  font-size: 18px;
+  font-weight: 500;
+
+  &__top{
+    width: 100%;
+    border-bottom: 1px solid #dcdcdc;
+    display: block;
+    height:100px;
+
+    &__title{
+      display: inline-block;
+      line-height: 100px;
+      float:left;
+      width: 50%;
+
+      &__search{
+        display: inline;
+        color:#a9a9a9;
+      }
+    }
+
+    &__post-btn{
+      display: block;
+      float:right;
+      font-size: 14px;
+      border-radius: 5px;
+      margin: 25px 0;
+      background: #1e90ff;
+      cursor: pointer;
+
+      .post-btn__text{
+        padding:13px 30px;
+        display: block;
+        color:#ffffff;
+      }
+    }
+
+    &__post-btn:hover{
+      opacity: 0.9;
+    }
+
+  }
+
+  &__contents{
+    clear: both;
+    display: block;
+    border-bottom: 1px solid #dcdcdc;
+
+    &__category{
+      height:20px;
+
+      &__box{
+        display: inline-block;
+        padding: 3px 3px;
+        text-align: center;
+        width:100px;
+        border-radius: 20px;
+        font-size:11px;
+        color: #FFFFFFFF;
+      }
+    }
+
+    &__date{
+      float:right;
+      color: #696969;
+      font-size: 13px;
+    }
+
+
+
+    &__post{
+      color: #696969;
+      font-size: 13px;
+      display: flex;
+      margin:10px 0;
+
+
+      &__info{
+
+        &__text{
+          display: block;
+          height:100px;
+          width:760px;
+          padding-right:60px;
+        }
+
+        &__user{
+          display: flex;
+          height:30px;
+          
+  
+          &__name{
+            font-size:15px;
+            display: block;
+            padding-right:14px;
+            line-height: 30px;
+            width:30%;
+          }
+
+          .link-btn:hover{
+            opacity: 0.7;
+          }
+
+          &__menu{
+            width: 70%;
+            display:inline-block;
+            text-align: right;
+            padding-right:60px;
+          }
+
+          .post-menu{
+            font-size: 20px;
+            margin-left:10px;
+            line-height: 30px;
+          }
+
+          .post-menu--gry{
+            font-size: 20px;
+            margin-left:10px;
+            line-height: 30px;
+            color:#c0c0c0;
+          }
+
+          .post-menu--gry-text{
+            color:#c0c0c0;
+            display: inline;
+            
+          }
+        }
+
+
+      }
+  
+      &__image{
+        margin-right: auto;
+        
+
+        .post-image{
+          display: inline-block;
+          height: 120px;
+          width: 120px;
+          object-fit: cover;
+
+
+        }
+      }
+
+
+    }
+      
+
+    
+  }
+
+
+
+}

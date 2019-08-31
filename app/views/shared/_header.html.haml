@@ -1,0 +1,37 @@
+-# ヘッダー部分
+.wrapper
+  %header.header
+    .header__inner
+      .header__inner__title-logo
+        = link_to root_path do
+          = image_tag 'logo.png', alt: 'タイトルロゴ', class: 'header__inner__title-logo__image'
+        
+      %p.header__inner__about-app
+        GamePhotoは、ゲームのハイライトを画像と一緒に投稿できるサイトです。
+      .header__inner__login-menu
+        -if user_signed_in?
+          = link_to 'ログアウト',destroy_user_session_path, method: :delete, class:'header__inner__login-menu__login'
+        -else
+          = link_to 'ログイン',new_user_session_path, class:'header__inner__login-menu__login'
+          = link_to '新規登録',new_user_registration_path, class:'header__inner__login-menu__sign-up'
+
+    .header__search-form
+      = form_tag search_posts_path, method: :get do
+        = text_field_tag :search, "", placeholder:"検索",class: 'header__search-form__box'
+        = button_tag(type:'submit', class: 'search-btn') do
+          = fa_icon "search", class: 'search-icon'   
+          
+          
+    .header__user
+      -if user_signed_in?
+        %p.header__user__name
+          =link_to user_path(current_user.id) do
+            = "ようこそ #{current_user.name}さん"
+        %p.header__user__follow フォロー
+        %p 17人
+        %p.header__user__follower フォロワー
+        %p 15人
+
+
+
+  
