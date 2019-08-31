@@ -12,9 +12,11 @@
  *
  *= require_tree .
  *= require_self
+ /*
+ *= require font-awesome
  */
  @import "reset";
+ @import "font-awesome";
  @import "mixin/global";
  @import "modules/header";
  @import "modules/new";
- 
