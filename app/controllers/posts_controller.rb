@@ -1,7 +1,10 @@
 class PostsController < ApplicationController
-  before_action :redirect_to_top,except: [:index]
+  before_action :redirect_to_top,except: [:index,:search]
+  before_action :current_user,     only: [:destroy]
+
+
   def index
-    @posts = Post.includes(:user,:post_category).order("created_at desc")
+    @posts = Post.all.page(params[:page]).order("created_at desc")
     require "date"
     @day = Date.today
   end
@@ -24,14 +27,24 @@ class PostsController < ApplicationController
   end
 
   def update
-    # if @post.update(post_params)
-    #   redirect_to root_path
-    # else
-    #   render action: 'edit'
-    # end
+    @post = Post.find(params[:id])
+    if @post.update(post_params)
+      redirect_to root_path
+    else
+      render action: 'edit'
+    end
   end
 
   def destroy
+    @post = Post.find(params[:id]).destroy
+    redirect_to root_path
+  end
+
+  def search
+    @posts = Post.search(params[:search])
+    @posts = @posts.page(params[:page]).order("created_at desc")
+    require "date"
+    @day = Date.today
   end
 
   private
@@ -42,6 +55,8 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:name,:text,:image,:post_category_id)
+    params.require(:post).permit(:text,:image,:post_category_id)
   end
+
+  
 end
