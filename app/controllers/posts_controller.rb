@@ -7,6 +7,7 @@ class PostsController < ApplicationController
     @posts = Post.all.page(params[:page]).order("created_at desc")
     require "date"
     @day = Date.today
+    @like = Like.new
   end
 
   def new
