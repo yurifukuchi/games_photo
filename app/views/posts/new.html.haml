@@ -4,7 +4,7 @@
       = image_tag 'logo.png', alt: 'タイトルロゴ', class: 'new-wrapper__header__title__logo'
   .new-wrapper__main
   = form_for (@post) do |f|
-    = f.collection_select :post_category_id, PostCategory.all,:id,:name,{prompt: "---"},{class: 'select-box'}
+    = f.collection_select :post_category_id, PostCategory.all,:id,:name,{selected: :post_category_id == 1},{class: 'select-box'}
     = f.file_field :image, class:"file",id: "file"
 
     

@@ -16,10 +16,12 @@
           = link_to '新規登録',new_user_registration_path, class:'header__inner__login-menu__sign-up'
 
     .header__search-form
-      = form_tag root_path do
-        = search_field_tag("keyword", "", {placeholder: "検索してね", class: 'header__search-form__box'})
-        -# = button_tag(type: "submit", class: 'header__inner__search-form__btn') do
-
+      = form_tag search_posts_path, method: :get do
+        = text_field_tag :search, "", placeholder:"検索",class: 'header__search-form__box'
+        = button_tag(type:'submit', class: 'search-btn') do
+          = fa_icon "search", class: 'search-icon'   
+          
+          
     .header__user
       -if user_signed_in?
         %p.header__user__name

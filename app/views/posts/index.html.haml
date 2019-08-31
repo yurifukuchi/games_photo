@@ -1,18 +1,17 @@
 .wrapper
   = render 'shared/header'
 
-  - if user_signed_in?
-    = link_to new_post_path, class: "float-sell-btn" do
-      .sell 投稿
-      %i.fa.fa-camera
-  - else
-    = link_to new_user_registration_path, class: "float-sell-btn" do
-      .sell 投稿
-      %i.fa.fa-camera
-
   %main.main
     .main__inner
-      .main__inner__title
-        最近の投稿
+      .main__inner__top
+        .main__inner__top__title
+          最近の投稿
+        - if user_signed_in?
+          .main__inner__top__post-btn
+            =link_to '投稿する',new_post_path, class: 'post-btn__text'
+
+
     
       = render 'posts/post-item'
+
+  = paginate @posts
