@@ -39,14 +39,18 @@
                 = link_to post_path(post.id), method: :delete do
                   = fa_icon "trash",class: 'post-menu--gry'
                   %p.post-menu--gry-text 削除
+
+              - if current_user.already_liked?(post)
+                = link_to post_like_path(post,id:post.id), method: :delete do
+                  = fa_icon "star",class:'star-yellow'
               - else
-                - if current_user.already_liked?(post)
-                  = button_to 'いいねけす',post_like_path(post,id:post.id),method: :delete
-                - else
-                  = button_to 'いいね', post_likes_path(post)
+                = link_to post_likes_path(post),method: :post do
+                  = fa_icon "star",class:'star-gray'
+            - else
+              = fa_icon "star"
 
 
-              = post.likes.count
+            = post.likes.count
               
                   
 
