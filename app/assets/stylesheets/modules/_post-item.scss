@@ -46,7 +46,6 @@
     &__post-btn:hover{
       opacity: 0.9;
     }
-
   }
 
   &__contents{
@@ -74,14 +73,11 @@
       font-size: 13px;
     }
 
-
-
     &__post{
       color: #696969;
       font-size: 13px;
       display: flex;
       margin:10px 0;
-
 
       &__info{
 
@@ -96,7 +92,6 @@
           display: flex;
           height:30px;
           
-  
           &__name{
             font-size:15px;
             display: block;
@@ -146,16 +141,13 @@
               font-size:25px;
               color:#d3d3d3;
             }
-  
           }
-
         }
       }
   
       &__image{
         margin-right: auto;
         
-
         .post-image{
           display: inline-block;
           height: 120px;
