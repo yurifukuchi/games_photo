@@ -125,22 +125,26 @@
 
           .post-menu--gry-text{
             color:#c0c0c0;
-            display: inline;
-            margin-right: 10px;
+            padding-right:30px;
           }
 
-          .star-yellow{
-            font-size:25px;
-            color:yellow;
+
+          .likes{
+            display: inline-block;
+
+            .star-yellow{
+              font-size:25px;
+              color:yellow;
+            }
+            .star-gray{
+              font-size:25px;
+              color:#d3d3d3;
+              border-color: red;
+            }
+  
           }
-          .star-gray{
-            font-size:25px;
-            color:gray;
-            border-color: red;
-          }
+
         }
-
-
       }
   
       &__image{
@@ -152,18 +156,8 @@
           height: 120px;
           width: 120px;
           object-fit: cover;
-
-
         }
       }
-
-
     }
-      
-
-    
   }
-
-
-
 }

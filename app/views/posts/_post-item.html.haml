@@ -38,27 +38,13 @@
                   編集
                 = link_to post_path(post.id), method: :delete do
                   = fa_icon "trash",class: 'post-menu--gry'
-                  %p.post-menu--gry-text 削除
+                  %span.post-menu--gry-text 
+                    削除
 
-              - if current_user.already_liked?(post)
-                = link_to post_like_path(post,id:post.id), method: :delete do
-                  = fa_icon "star",class:'star-yellow'
-              - else
-                = link_to post_likes_path(post),method: :post do
-                  = fa_icon "star",class:'star-gray'
-            - else
-              = fa_icon "star"
-
-
+            .likes{id: "like-#{post.id}"}
+              = render partial: "likes/like", locals: { post: post }
             = post.likes.count
               
-                  
-
-
-
-              
-      
-
       .main__inner__contents__post__image
         = image_tag post.image.url, class: 'post-image'
           
