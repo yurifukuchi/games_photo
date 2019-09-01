@@ -8,6 +8,7 @@
     border-bottom: 1px solid #dcdcdc;
     display: block;
     height:100px;
+    clear: both;
 
     &__title{
       display: inline-block;
@@ -25,7 +26,7 @@
         color: #a9a9a9;
       }
     }
-
+  
     &__post-btn{
       display: block;
       float:right;

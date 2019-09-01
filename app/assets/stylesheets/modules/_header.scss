@@ -92,9 +92,6 @@
       border: 1px solid #1D90FF;
     }
     
-
-
-
     &__btn{
       display: block;
       border-style: none;
@@ -117,17 +114,13 @@
     color:#696969;
     
     &__name{
-
+      padding-right:30px;
     }
 
-    &__follow{
-      margin:0px 30px 0px 50px;
-
+    &__likes-link{
+      display:inline-block;
     }
 
-    &__follower{
-      margin:0 30px 0 15px;
-    }
   }
 
 
