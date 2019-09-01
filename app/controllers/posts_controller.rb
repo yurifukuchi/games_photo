@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  before_action :redirect_to_top,except: [:index,:search]
-  before_action :current_user,     only: [:destroy]
+  before_action :redirect_to_top, except: [:index, :search]
+  before_action :current_user,      only: [:destroy, :edit]
 
 
   def index
@@ -58,6 +58,5 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:text,:image,:post_category_id)
   end
-
-  
+    
 end
