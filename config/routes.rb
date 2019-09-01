@@ -4,15 +4,19 @@ Rails.application.routes.draw do
     sessions: "users/sessions",
   }
 
-  resources :users, :only => [:show]
+  resources :users, :only => [:show] do
+    member do
+      get 'likes'
+    end
+  end
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root 'posts#index'
-  resources :posts, only:[:new,:create,:edit,:update,:destroy] do
+  resources :posts, except: [:index] do
     collection do
       get 'search'
     end
-
     resources :likes, only: [:create, :destroy]
   end
 
