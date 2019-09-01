@@ -32,19 +32,18 @@
               = post.user.name
           .main__inner__contents__post__info__user__menu
             - if user_signed_in?
-              -if post.user.id == current_user.id
+              - if post.user.id == current_user.id
                 = link_to edit_post_path(post.id) do
                   = fa_icon "edit", class:'post-menu'
                   編集
                 = link_to post_path(post.id), method: :delete do
                   = fa_icon "trash",class: 'post-menu--gry'
-                  %p.post-menu--gry-text 削除
+                  %span.post-menu--gry-text 
+                    削除
 
-              - else
-
+            .likes{id: "like-#{post.id}"}
+              = render partial: "likes/like", locals: { post: post }
               
-      
-
       .main__inner__contents__post__image
         = image_tag post.image.url, class: 'post-image'
           

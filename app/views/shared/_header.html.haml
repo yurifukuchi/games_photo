@@ -17,7 +17,7 @@
 
     .header__search-form
       = form_tag search_posts_path, method: :get do
-        = text_field_tag :search, "", placeholder:"検索",class: 'header__search-form__box'
+        = text_field_tag :search, "", placeholder:"例）どうぶつタワーバトル", maxlength:20,class: 'header__search-form__box'
         = button_tag(type:'submit', class: 'search-btn') do
           = fa_icon "search", class: 'search-icon'   
           
@@ -27,10 +27,10 @@
         %p.header__user__name
           =link_to user_path(current_user.id) do
             = "ようこそ #{current_user.name}さん"
-        %p.header__user__follow フォロー
-        %p 17人
-        %p.header__user__follower フォロワー
-        %p 15人
+        %p.header__user__likes-link
+          = fa_icon "star"
+          = link_to 'お気に入りの投稿を見る', likes_user_path(current_user.id)
+            
 
 
 
