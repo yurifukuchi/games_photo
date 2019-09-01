@@ -43,7 +43,6 @@
 
             .likes{id: "like-#{post.id}"}
               = render partial: "likes/like", locals: { post: post }
-            = post.likes.count
               
       .main__inner__contents__post__image
         = image_tag post.image.url, class: 'post-image'

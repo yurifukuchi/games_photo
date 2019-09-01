@@ -1,12 +1,13 @@
 .wrapper
   = render 'shared/header'
 
-
   %main.main
     .main__inner
       .main__inner__top
         .main__inner__top__title
-          = "#{@user.name}さんの投稿"
+          .main__inner__top__title__user
+            = @user.name
+          さんの投稿
       
         = render 'posts/post-item'
 

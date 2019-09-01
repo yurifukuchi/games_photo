@@ -19,6 +19,11 @@
         display: inline;
         color:#a9a9a9;
       }
+
+      &__user{
+        display: inline;
+        color: #a9a9a9;
+      }
     }
 
     &__post-btn{
@@ -134,12 +139,11 @@
 
             .star-yellow{
               font-size:25px;
-              color:yellow;
+              color:#fff352;
             }
             .star-gray{
               font-size:25px;
               color:#d3d3d3;
-              border-color: red;
             }
   
           }
