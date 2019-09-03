@@ -7,7 +7,7 @@
           = image_tag 'logo.png', alt: 'タイトルロゴ', class: 'header__inner__title-logo__image'
         
       %p.header__inner__about-app
-        GamePhotoは、ゲームのハイライトを画像と一緒に投稿できるサイトです。
+        GamePhotoは、ゲームに関するコミュニティサイトです。
       .header__inner__login-menu
         -if user_signed_in?
           = link_to 'ログアウト',destroy_user_session_path, method: :delete, class:'header__inner__login-menu__login'

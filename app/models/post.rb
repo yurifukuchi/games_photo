@@ -6,7 +6,7 @@ class Post < ApplicationRecord
 
   mount_uploader :image, ImageUploader
 
-  paginates_per 30
+  paginates_per 15
 
   def self.search(search)
     if search
@@ -23,5 +23,6 @@ class Post < ApplicationRecord
   def ungood(user)
     likes.find_by(user_id: user.id).destroy
   end
+  
   
 end

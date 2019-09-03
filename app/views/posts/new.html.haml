@@ -2,12 +2,22 @@
   .new-wrapper__header
     = link_to root_path, class:'new-wrapper__header__title' do
       = image_tag 'logo.png', alt: 'タイトルロゴ', class: 'new-wrapper__header__title__logo'
-  .new-wrapper__main
-  = form_for (@post) do |f|
-    = f.collection_select :post_category_id, PostCategory.all,:id,:name,{selected: :post_category_id == 1},{class: 'select-box'}
-    = f.file_field :image, class:"file",id: "file"
-
-    
   
-    = f.text_field :text, class:''
-    = f.submit "送信"
+  .new-wrapper__main
+    .new-wrapper__main__description
+      投稿画面
+    = form_for (@post) do |f|
+
+      .new-wrapper__main__post-category
+        %p.new-wrapper__main__input-title 記事のカテゴリ
+        = f.collection_select :post_category_id, PostCategory.all,:id,:name,{selected: :post_category_id == 1},{class: 'select-box'}
+      .new-wrapper__main__post-image
+        %p.new-wrapper__main__input-title 画像（任意）
+        = f.file_field :image, class:"file",id: "file" 
+
+      .new-wrapper__main__post-text
+        %p.new-wrapper__main__input-title コメント（必須）
+        = f.text_area :text, class:'post-text__input'
+
+
+        = f.submit "投稿する", class: 'new-wrapper__main__submit'

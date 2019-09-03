@@ -1,10 +1,10 @@
 .new-wrapper{
   background-color: #F5F5F5;
-  overflow: hidden;
+  height: 800px;
 
   &__header{
     width: 100%;
-    height: 150px;
+    height: 120px;
     display: block;
   
     &__title{
@@ -16,9 +16,55 @@
       &__logo{
         margin: 40px 0 0;
         display: inline-block;
-        height:60px;
+        height: 60px;
         text-align: center; 
       }
+    }
+  }
+
+  &__main{
+    margin: 30px 250px;
+    padding: 20px 30px;
+    background-color: white;
+    height: 500px;
+
+    &__description{
+      font-size: 18px;
+      color:#696969;
+      margin: 20px 0;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #dcdcdc;
+    }
+
+    &__input-title{
+      display: inline-block;
+      margin-bottom: 5px;
+      width: 100%;
+      font-size: 13px;
+      color:#696969;
+    }
+
+
+    &__post-image{
+      height:100px;
+
+    }
+
+    &__post-category{
+      height: 80px;
+      background-color: white;
+    }
+
+    .post-text__input{
+      width: 100%;
+      height: 150px;
+      font-size:15px;
+    }
+
+    &__submit{
+      margin-top:20px;
+      width:100px;
+      height:50px;
     }
   }
 }
