@@ -11,5 +11,6 @@
             =link_to '投稿する', new_post_path, class: 'post-btn__text'
     
       = render 'posts/post-item'
-
-  = paginate @posts
+      
+  .pagination
+    = paginate @posts

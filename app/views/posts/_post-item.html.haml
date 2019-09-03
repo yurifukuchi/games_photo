@@ -45,7 +45,8 @@
               = render partial: "likes/like", locals: { post: post }
               
       .main__inner__contents__post__image
-        = image_tag post.image.url, class: 'post-image'
+        -if post.image.present?
+          = image_tag post.image.url, class: 'post-image'
           
 
 
