@@ -4,11 +4,11 @@
 
 ## このアプリケーションについて
 GamesPhotoはゲームに関する投稿ができるコミュニティサイトです。
-<br>
+<br><br>
 ## 制作背景
 ゲームに関する情報交換やオンラインで遊ぶフレンドを探す目的で、
 ゲームコンテンツ全般を扱うコミュニティサイトがあったら便利だと感じ制作しました。
-<br>
+<br><br>
 ## 機能一覧
 
 ### <font color="DimGray">・ログイン認証</font>
@@ -34,7 +34,7 @@ GamesPhotoはゲームに関する投稿ができるコミュニティサイト�
 ### <font color="DimGray">・ページネーション機能</font>
 kaminariを使用
 
-<br>
+<br><br>
 ## アプリケーション内の技術
 * Ruby
 * Ruby on Rails
@@ -42,11 +42,12 @@ kaminariを使用
 * MYSQL
 * ajaxを使った非同期化（お気に入り部分）
 * AWS
-<br>
+<br><br>
 ## DB設計
+
 ![games_photo_ER (1)](https://user-images.githubusercontent.com/50174939/64489518-0eaebe00-d28f-11e9-8df9-91f237146dd8.png)
 
-<br>
+<br><br>
 ## 今後実装したい機能
 * 記事の詳細機能
 * S3での画像アップロード
