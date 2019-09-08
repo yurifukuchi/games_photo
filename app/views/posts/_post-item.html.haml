@@ -25,7 +25,7 @@
       
       .main__inner__contents__post__info
         .main__inner__contents__post__info__text
-          = simple_format(post.text.truncate(200))
+          = simple_format(post.text)
         .main__inner__contents__post__info__user
           .main__inner__contents__post__info__user__name
             = link_to user_path(post.user_id), class: 'link-btn' do

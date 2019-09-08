@@ -13,7 +13,7 @@
         = f.collection_select :post_category_id, PostCategory.all,:id,:name,{class: 'select-box'}
       .new-wrapper__main__post-image
         %p.new-wrapper__main__input-title 画像（任意）
-        = f.file_field :image, class:"file",id: "file"
+        = f.file_field :image, url:@post.image.url,class:"file",id: "file"
 
       .new-wrapper__main__post-text
         %p.new-wrapper__main__input-title コメント（必須）
