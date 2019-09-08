@@ -1,6 +1,6 @@
 # README
 
-
+<img width="1438" alt="game_photo_top" src="https://user-images.githubusercontent.com/50174939/64490661-37888080-d29a-11e9-891c-aa6264fb1ca7.png">
 
 ## このアプリケーションについて
 GamesPhotoはゲームに関する投稿ができるコミュニティサイトです。
