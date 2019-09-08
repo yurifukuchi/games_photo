@@ -10,7 +10,7 @@
 
       .new-wrapper__main__post-category
         %p.new-wrapper__main__input-title 記事のカテゴリ
-        = f.collection_select :post_category_id, PostCategory.all,:id,:name,{selected: :post_category_id == 1},{class: 'select-box'}
+        = f.collection_select :post_category_id, PostCategory.all,:id,:name,{class: 'select-box'}
       .new-wrapper__main__post-image
         %p.new-wrapper__main__input-title 画像（任意）
         = f.file_field :image, class:"file",id: "file"
@@ -18,6 +18,5 @@
       .new-wrapper__main__post-text
         %p.new-wrapper__main__input-title コメント（必須）
         = f.text_area :text, class:'post-text__input'
-
 
         = f.submit "編集する", class: 'new-wrapper__main__submit'
