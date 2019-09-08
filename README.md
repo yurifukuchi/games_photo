@@ -1,24 +1,56 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<img width="1438" alt="game_photo_top" src="https://user-images.githubusercontent.com/50174939/64490661-37888080-d29a-11e9-891c-aa6264fb1ca7.png">
 
-Things you may want to cover:
+## このアプリケーションについて
+GamesPhotoはゲームに関する投稿ができるコミュニティサイトです。
+<br><br>
+## 制作背景
+ゲームに関する情報交換やオンラインで遊ぶフレンドを探す目的で、
+ゲームコンテンツ全般を扱うコミュニティサイトがあったら便利だと感じ制作しました。
+<br><br>
+## 機能一覧
 
-* Ruby version
+### <font color="DimGray">・ログイン認証</font>
+  deviseを使ったユーザー認証
+### <font color="DimGray">・記事の投稿/編集/削除（ログインユーザーのみ）</font>
 
-* System dependencies
+入力項目|概要
+---|---
+|記事のカテゴリ|記事のカテゴリを選択できます。（おすすめ/レビュー/フレンド募集）<br>何に関する記事なのか分かりやすくすることができます。|
+|画像|記事に関する画像を投稿できます。（任意）|
+|コメント|記事のコメントを投稿します。|
 
-* Configuration
+* トップページで最新の投稿を確認できます。
+* トップページの「ようこそ〇〇さん」からログインユーザーの記事を確認できます。
+* ユーザー名リンクからそのユーザーの記事を確認できます。
 
-* Database creation
+### <font color="DimGray">・記事のお気に入り（ログインユーザーのみ）</font>
+「★ボタン」から気に入った記事をお気に入りに追加できます。<br>「お気に入りの投稿を見る」からお気に入りした記事を閲覧できます。自分のお気に入りのみ見ることができます。
 
-* Database initialization
+### <font color="DimGray">・記事の検索</font>
+記事の検索ができます。投稿する際はゲーム名を入れることで検索がヒットしやすくなります。
 
-* How to run the test suite
+### <font color="DimGray">・ページネーション機能</font>
+kaminariを使用
 
-* Services (job queues, cache servers, search engines, etc.)
+<br><br>
+## アプリケーション内の技術
+* Ruby
+* Ruby on Rails
+* Github
+* MYSQL
+* ajaxを使った非同期化（お気に入り部分）
+* AWS
+<br><br>
+## DB設計
 
-* Deployment instructions
+![games_photo_ER (1)](https://user-images.githubusercontent.com/50174939/64489518-0eaebe00-d28f-11e9-8df9-91f237146dd8.png)
 
-* ...
+<br><br>
+## 今後実装したい機能
+* 記事の詳細機能
+* S3での画像アップロード
+* 記事へのコメント機能
+* ユーザーのフォロー機能
+* Hotワード表示

@@ -6,7 +6,6 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all.page(params[:page]).order("created_at desc")
     require "date"
-    @day = Date.today
     @like = Like.new
   end
 
@@ -17,6 +16,8 @@ class PostsController < ApplicationController
   def create
     @post = Post.create(post_params)
     @post.user_id = current_user.id
+    @day = Date.today
+    @post.created_at == @day
 
     if @post.save
       redirect_to root_path
