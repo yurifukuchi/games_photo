@@ -1,24 +1,38 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
 
-* Ruby version
+## このアプリケーションについて
+GamesPhotoはゲームに関する投稿ができるコミュニティサイトです。
 
-* System dependencies
+## 制作背景
+ゲームに関する情報交換やオンラインで遊ぶフレンドを探す目的で、
+ゲームコンテンツ全般を扱うコミュニティサイトがあったら便利だと感じ制作しました。
 
-* Configuration
+## 機能一覧
 
-* Database creation
+###・ログイン認証
+###・記事の投稿/編集/削除（ログインユーザーのみ）
+|記事のカテゴリ|記事のカテゴリを選択できます。（おすすめ/レビュー/フレンド募集）  何に関する記事なのか分かりやすくすることができます。|
+|画像|記事に関する画像を投稿できます（任意）|
+|コメント|記事のコメントを投稿します。|
 
-* Database initialization
+トップページの「ようこそ〇〇さん」からログインユーザーの記事を確認できます。
+ユーザー名リンクからそのユーザーの記事を確認できます。
 
-* How to run the test suite
+###・記事のお気に入り（ログインユーザーのみ）
+★ボタンをクリックして気に入った記事をお気に入りに追加できます。
+「お気に入りの投稿を見る」リンクでお気に入りした記事を閲覧できます。自分のお気に入りのみ見ることができます。
 
-* Services (job queues, cache servers, search engines, etc.)
+###・記事の検索
+記事の検索ができます。投稿する際はゲーム名を入れることで検索がヒットしやすくなります。
 
-* Deployment instructions
+###・ページネーション機能
 
-* ...
+## アプリケーション内の技術
+・Ruby
+・Ruby on Rails
+・Github
+・MYSQL
+・ajaxを使った非同期化（お気に入り部分）
+・AWS
