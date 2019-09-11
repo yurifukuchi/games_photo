@@ -1,3 +1,5 @@
+-# 記事詳細画面
+
 .new-wrapper
   .new-wrapper__header
     = link_to root_path, class:'new-wrapper__header__title' do
@@ -7,27 +9,8 @@
     .new-wrapper__main-show__inner
       .new-wrapper__main__description
         記事詳細
-      .main__inner__contents__category
-        - if @post.post_category.present?
-          - if @post.post_category.id == 1
-            .main__inner__contents__category__box.category1
-              = @post.post_category.name
-
-          - if @post.post_category.id == 2
-            .main__inner__contents__category__box.category2
-              = @post.post_category.name
-
-          - if @post.post_category.id == 3
-            .main__inner__contents__category__box.category3
-              = @post.post_category.name
-
-          - if @post.post_category.id == 4
-            .main__inner__contents__category__box.category4
-              = @post.post_category.name
-
-        .main__inner__contents__date
-          = @post.created_at.strftime("%Y-%m-%d %H:%M:%S")
-      
+        
+      = render 'posts/post-category',post: @post
     
       -if @post.image.present?
         .new-wrapper__main-show__post-image

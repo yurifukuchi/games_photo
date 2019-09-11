@@ -1,26 +1,9 @@
+-# 記事一覧
+
 - @posts.each do |post|
   = link_to post_path(post.id) do
     .main__inner__contents
-      .main__inner__contents__category
-        - if post.post_category.present?
-          - if post.post_category.id == 1
-            .main__inner__contents__category__box.category1
-              = post.post_category.name
-
-          - if post.post_category.id == 2
-            .main__inner__contents__category__box.category2
-              = post.post_category.name
-
-          - if post.post_category.id == 3
-            .main__inner__contents__category__box.category3
-              = post.post_category.name
-
-          - if post.post_category.id == 4
-            .main__inner__contents__category__box.category4
-              = post.post_category.name
-
-        .main__inner__contents__date
-          = post.created_at.strftime("%Y-%m-%d %H:%M:%S")
+      = render 'posts/post-category',post: post
           
       .main__inner__contents__post   
         .main__inner__contents__post__info
