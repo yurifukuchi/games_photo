@@ -56,5 +56,5 @@
         .likes{id: "like-#{@post.id}"}
           = render partial: "likes/like", locals: { post: @post }
 
-    -# = link_to '戻る', root_path ,class:'show-return-btn'
+      = link_to '戻る', :back ,class:'show-return-btn'
     
