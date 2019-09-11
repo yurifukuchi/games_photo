@@ -1,52 +1,53 @@
 - @posts.each do |post|
-  .main__inner__contents
-    .main__inner__contents__category
-    - if post.post_category.present?
-      - if post.post_category.id == 1
-        .main__inner__contents__category__box.category1
-          = post.post_category.name
+  = link_to post_path(post.id) do
+    .main__inner__contents
+      .main__inner__contents__category
+        - if post.post_category.present?
+          - if post.post_category.id == 1
+            .main__inner__contents__category__box.category1
+              = post.post_category.name
 
-      - if post.post_category.id == 2
-        .main__inner__contents__category__box.category2
-          = post.post_category.name
+          - if post.post_category.id == 2
+            .main__inner__contents__category__box.category2
+              = post.post_category.name
 
-      - if post.post_category.id == 3
-        .main__inner__contents__category__box.category3
-          = post.post_category.name
+          - if post.post_category.id == 3
+            .main__inner__contents__category__box.category3
+              = post.post_category.name
 
-      - if post.post_category.id == 4
-        .main__inner__contents__category__box.category4
-          = post.post_category.name
+          - if post.post_category.id == 4
+            .main__inner__contents__category__box.category4
+              = post.post_category.name
 
-    .main__inner__contents__date
-      = post.created_at.strftime("%Y-%m-%d %H:%M:%S")
-        
-    .main__inner__contents__post
-      
-      .main__inner__contents__post__info
-        .main__inner__contents__post__info__text
-          = simple_format(post.text)
-        .main__inner__contents__post__info__user
-          .main__inner__contents__post__info__user__name
-            = link_to user_path(post.user_id), class: 'link-btn' do
-              = post.user.name
-          .main__inner__contents__post__info__user__menu
-            - if user_signed_in?
-              - if post.user.id == current_user.id
-                = link_to edit_post_path(post.id) do
-                  = fa_icon "edit", class:'post-menu'
-                  編集
-                = link_to post_path(post.id), method: :delete do
-                  = fa_icon "trash",class: 'post-menu--gry'
-                  %span.post-menu--gry-text 
-                    削除
-
-            .likes{id: "like-#{post.id}"}
-              = render partial: "likes/like", locals: { post: post }
-              
-      .main__inner__contents__post__image
-        -if post.image.present?
-          = image_tag post.image.url, class: 'post-image'
+        .main__inner__contents__date
+          = post.created_at.strftime("%Y-%m-%d %H:%M:%S")
           
+      .main__inner__contents__post
+        
+        .main__inner__contents__post__info
+          .main__inner__contents__post__info__text
+            = simple_format(post.text)
+          .main__inner__contents__post__info__user
+            .main__inner__contents__post__info__user__name
+              = link_to user_path(post.user_id), class: 'link-btn' do
+                = post.user.name
+            .main__inner__contents__post__info__user__menu
+              - if user_signed_in?
+                - if post.user.id == current_user.id
+                  = link_to edit_post_path(post.id) do
+                    = fa_icon "edit", class:'post-menu'
+                    編集
+                  = link_to post_path(post.id), method: :delete do
+                    = fa_icon "trash",class: 'post-menu--gry'
+                    %span.post-menu--gry-text 
+                      削除
+
+              .likes{id: "like-#{post.id}"}
+                = render partial: "likes/like", locals: { post: post }
+                
+        .main__inner__contents__post__image
+          -if post.image.present?
+            = image_tag post.image.url, class: 'post-image'
+            
 
 
