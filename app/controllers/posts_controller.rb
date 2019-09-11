@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
-  before_action :redirect_to_top, except: [:index, :search]
+  before_action :redirect_to_top, except: [:index, :search, :show]
   before_action :current_user,      only: [:destroy, :edit]
-
+  before_action :post_set,          only: [:edit, :update, :show]
 
   def index
     @posts = Post.all.page(params[:page]).order("created_at desc")
@@ -24,14 +24,15 @@ class PostsController < ApplicationController
     end
   end
 
+  def show
+  end
+
   def edit
-    @post = Post.find(params[:id])
   end
 
   def update
-    @post = Post.find(params[:id])
     if @post.update(post_params)
-      redirect_to root_path
+      redirect_to post_path(@post.id)
     else
       render action: 'edit'
     end
@@ -54,6 +55,10 @@ class PostsController < ApplicationController
     unless user_signed_in?
       redirect_to root_path
     end
+  end
+
+  def post_set
+    @post = Post.find(params[:id])
   end
 
   def post_params
