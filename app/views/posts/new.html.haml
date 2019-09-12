@@ -1,3 +1,5 @@
+-# 記事投稿ページ
+
 .new-wrapper
   .new-wrapper__header
     = link_to root_path, class:'new-wrapper__header__title' do
@@ -17,7 +19,7 @@
 
       .new-wrapper__main__post-text
         %p.new-wrapper__main__input-title コメント（必須）
-        = f.text_area :text,placeholder:'最大５行まで',class:'post-text__input'
+        = f.text_area :text, class:'post-text__input'
 
 
         = f.submit "投稿する", class: 'new-wrapper__main__submit'
